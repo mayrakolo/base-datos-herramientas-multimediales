@@ -1,0 +1,18 @@
+Base de datos completa: 
+MATCH (n) RETURN n
+
+Herramienta que trabaja con mayor cantidad de habilidades del pensamiento computacional: 
+MATCH(h:Herramienta)-[r]-(hpc:HabilidadPC) RETURN h.nombre, count(r) as cantidad_hpc_x_h ORDER BY cantidad_hpc_x_h desc
+
+Herramientas por Metodología: 
+MATCH (h:Herramienta)-[r]-(m:Metodologia)RETURN h,m, count(r) as cantidad_met_x_h ORDER BY cantidad_met_x_h desc
+MATCH (h:Herramienta)-[r]-(m:Metodologia)RETURN h.nombre,collect(m.tipo_metodologia), count(r) as cantidad_met_x_h ORDER BY cantidad_met_x_h desc
+
+Herramientas por Actividad Principal:
+MATCH (h:Herramienta)-[r]-(ap:ActividadPrincipal)RETURN h,ap, count(r) as cantidad_act_x_h ORDER BY cantidad_act_x_h desc
+MATCH (h:Herramienta)-[r]-(ap:ActividadPrincipal)RETURN h.nombre,collect(ap.tipo_actividad), count(r) as cantidad_act_x_h ORDER BY cantidad_act_x_h desc
+
+Todas las relaciones entre una herramienta y los demás nodos:
+
+
+
