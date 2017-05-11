@@ -13,6 +13,8 @@ MATCH (h:Herramienta)-[r]-(ap:ActividadPrincipal)RETURN h,ap, count(r) as cantid
 MATCH (h:Herramienta)-[r]-(ap:ActividadPrincipal)RETURN h.nombre,collect(ap.tipo_actividad), count(r) as cantidad_act_x_h ORDER BY cantidad_act_x_h desc
 
 Todas las relaciones entre una herramienta y los demás nodos:
+MATCH (:Herramienta {nombre: ‘Scratch’})-[r]-() RETURN r
+
 
 
 
